@@ -5,11 +5,11 @@ import axios from 'axios'
 const ViewEmployee = () => {
     const [data, changeData] = useState([])
     const fetchdata = () => {
-        axios.get("https://friendsapi-re5a.onrender.com/view").then((response) => {
+        axios.get("http://localhost:8080/view").then((response) => {
             changeData(response.data)
             console.log(response.data)
         }).catch((error) => {
-            alert.apply(error.message)
+            alert(error.message)
         })
     }
 
@@ -26,7 +26,7 @@ const ViewEmployee = () => {
                             <thead>
                                 <tr>
                                     <th scope="col">EMPLOYEE ID </th>
-                                    <th scope="col">FIRSTST NAME</th>
+                                    <th scope="col">FIRST NAME</th>
                                     <th scope="col">LAST NAME</th>
                                     <th scope="col">DOB</th>
 

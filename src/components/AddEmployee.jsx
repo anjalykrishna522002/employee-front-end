@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 const AddEmployee = () => {
     const [data, setData] = useState({
         employeeId: "",
-        firsttname: "",
+        firstname: "",
         lastname: "",
         dob: "",
 
@@ -19,7 +19,7 @@ const AddEmployee = () => {
     }
     const readValue = () => {
         console.log(data)
-        axios.post("https://courseapplogix.onrender.com/addstudents", data).then(
+        axios.post("http://localhost:8080/add", data).then(
             (Response) => {
                 console.log(Response.data)
                 if (Response.data.status == "success") {
@@ -47,19 +47,19 @@ const AddEmployee = () => {
                     <div className="col col-12">
                         <div className="row g-3">
                             <div className="col col-12 col-sm-6">
-                                <label htmlFor="fname" className="form-label">EMPLOYEE ID</label>
+                                <label htmlFor="employeeId" className="form-label">EMPLOYEE ID</label>
                                 <input type="text" className="form-control" name='employeeId' value={data.employeeId} onChange={inputHandler} />
                             </div>
                             <div className="col col-12 col-sm-6">
-                                <label htmlFor="lname" className="form-label">FIRST NAME</label>
+                                <label htmlFor="firstname" className="form-label">FIRST NAME</label>
                                 <input type="text" className="form-control" name='firstname' value={data.firstname} onChange={inputHandler} />
                             </div>
                             <div className="col col-12 col-sm-6">
-                                <label htmlFor="college" className="form-label">LAST NAME</label>
+                                <label htmlFor="lastname" className="form-label">LAST NAME</label>
                                 <input type="text" className="form-control" name='lastname' value={data.lastname} onChange={inputHandler} />
                             </div>
                             <div className="col col-12 col-sm-6">
-                                <label htmlFor="dob" className="form-label">DOB</label>
+                                <label htmlFor="" className="form-label">DOB</label>
                                 <input type="date" className="form-control" name='dob' value={data.dob} onChange={inputHandler} />
                             </div>
 
